@@ -1,3 +1,3 @@
-import startServer from "./pets/startServer";
+import startServer from "./pet/server/startServer";
 
 const server = startServer();
