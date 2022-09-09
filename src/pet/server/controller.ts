@@ -1,5 +1,5 @@
-import { adaptRequest } from "#root/utils";
-import handlePetRequest from "..";
+import { adaptRequest } from "#root/utils/index";
+import handlePetRequest from "../index";
 
 export default async function petController(req: any, res: any) {
     try {

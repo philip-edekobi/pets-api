@@ -5,3 +5,18 @@ export type Request = {
     method: string;
     query: any;
 };
+
+export type Response = {
+    headers: object;
+    statusCode: number;
+    data: string;
+};
+
+export type Pet = {
+    id: number;
+    name: string;
+    type: string;
+    owner: string;
+    age: number;
+    eyeColor: string;
+};
