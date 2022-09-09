@@ -1,4 +1,6 @@
-export default function adaptRequest(req: any) {
+import { Request } from "#root/types";
+
+export default function adaptRequest(req: any): Request {
     const { path, params, query, body, method } = req;
 
     return Object.freeze({
