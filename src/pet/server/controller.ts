@@ -1,4 +1,4 @@
-import { adaptRequest } from "#root/utils/index";
+import { adaptRequest } from "../../utils/index";
 import handlePetRequest from "../index";
 
 export default async function petController(req: any, res: any) {
@@ -9,6 +9,7 @@ export default async function petController(req: any, res: any) {
 
         res.set(headers).status(statusCode).send(data);
     } catch (err) {
+        console.log(err);
         res.status(500).end();
     }
 }

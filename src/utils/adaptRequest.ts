@@ -1,4 +1,4 @@
-import { Request } from "#root/types/index";
+import { Request } from "../types/index";
 
 export default function adaptRequest(req: any): Request {
     const { path, params, query, body, method } = req;

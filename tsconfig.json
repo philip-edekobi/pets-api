@@ -1,19 +1,14 @@
 {
     "compilerOptions": {
-        /* Language and Environment */
         "target": "es2016",
-
-        /* Modules */
         "module": "commonjs",
+        "rootDir": "./src",
         "outDir": "./dist",
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
-        "paths": {
-            "#root/*": ["./src/*"]
-        },
-
-        /* Type Checking */
         "strict": true,
+        "noImplicitAny": true,
+        "strictNullChecks": true,
         "skipLibCheck": true
     }
 }

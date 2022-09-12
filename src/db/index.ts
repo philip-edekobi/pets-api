@@ -1,9 +1,8 @@
-import { readFile } from "fs/promises";
+import { readFileSync } from "fs";
 import path from "path";
 
-export default async function makeDb() {
-    const json = await readFile(path.join(__dirname, "pets.json"), "utf-8");
+export default function makeDb() {
+    const json = readFileSync(path.join(__dirname, "pets.json"), "utf-8");
     const db = JSON.parse(json);
-    console.log(db);
     return db;
 }

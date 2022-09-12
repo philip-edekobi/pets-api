@@ -1,4 +1,4 @@
-import { Pet } from "#root/types/index";
+import { Pet } from "../types/index";
 
 export default function model({ database }: { database: any }) {
     return Object.freeze({
@@ -7,16 +7,16 @@ export default function model({ database }: { database: any }) {
         findById,
     });
 
-    async function getAll() {
+    function getAll() {
         return database.pets;
     }
 
-    async function findByFilter({ ...filterProps }: Pet) {
+    async function findByFilter({ ...filterProps }: any) {
         let pets = [];
 
         for (let prop in filterProps) {
             pets = database.pets.filter(
-                (pet: Pet) => pet[prop] === filterProps[prop]
+                (pet: any) => pet[prop] === filterProps[prop]
             );
         }
 

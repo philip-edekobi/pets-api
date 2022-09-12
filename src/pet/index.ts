@@ -1,8 +1,9 @@
-import makeDb from "#root/db/index";
-import makeDataModel from "#root/pet/dataModel";
-import makeConnectionHandler from "#root/pet/petEndpoints";
+import makeDb from "../db/index";
+import makeDataModel from "./dataModel";
+import makeConnectionHandler from "./petEndpoints";
 
-const database = await makeDb();
+let database = makeDb();
+
 const petsDataModel = makeDataModel({ database });
 const connectionHandler = makeConnectionHandler({ dataModel: petsDataModel });
 

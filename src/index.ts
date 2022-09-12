@@ -1,3 +1,3 @@
-import startServer from "./pet/server/startServer";
+import startServer from "./pet/server/index";
 
-const server = startServer();
+(async () => await startServer())();

@@ -1,11 +1,11 @@
-import { Request, Response } from "#root/types/index";
-import { makeHttpError } from "#root/utils/index";
+import { Request, Response } from "../types/index";
+import { makeHttpError } from "../utils/index";
 
 export default function endpoints({ dataModel }: { dataModel: any }) {
     return async function handle(httpRequest: Request) {
         switch (httpRequest.method) {
             case "GET": {
-                return getAllPets(httpRequest);
+                return getAllPets();
             }
 
             default: {
@@ -17,7 +17,15 @@ export default function endpoints({ dataModel }: { dataModel: any }) {
         }
     };
 
-    async function getAllPets(req: Request): Promise<Response> {
-        return dataModel.getAll();
+    function getAllPets(): Response {
+        const pets = dataModel.getAll();
+
+        return {
+            headers: {
+                "Content-type": "application/json",
+            },
+            statusCode: 200,
+            data: pets,
+        };
     }
 }
